@@ -6,12 +6,10 @@
 <% 
 
 	if params[:id]
-		id = params[:id]
-	else
-		id = @list[0]
+		recipe = Yummly.find(params[:id])
 	end 
 	
-	recipe = Yummly.find(id) if id.present?
+	
 
 %>
 <%= form_tag({controller: 'users', action: 'index'}, {method: :get}) do %>
